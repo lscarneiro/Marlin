@@ -1,0 +1,68 @@
+//bkp
+M92 E1379.31
+M851 Z-2.12
+M420 S1 Z20
+
+M851 Z-2.08
+
+
+
+
+
+
+
+Send: M503
+Recv: echo:  G21    ; Units in mm (mm)
+Recv: echo:  M149 C ; Units in Celsius
+Recv: 
+Recv: echo:; Filament settings: Disabled
+Recv: echo:  M200 S0 D1.75
+Recv: echo:; Steps per unit:
+Recv: echo: M92 X160.00 Y160.00 Z800.00 E1400.00
+Recv: echo:; Maximum feedrates (units/s):
+Recv: echo:  M203 X150.00 Y150.00 Z15.00 E20.00
+Recv: echo:; Maximum Acceleration (units/s2):
+Recv: echo:  M201 X900.00 Y900.00 Z250.00 E500.00
+Recv: echo:; Acceleration (units/s2): P<print_accel> R<retract_accel> T<travel_accel>
+Recv: echo:  M204 P4000.00 R500.00 T4000.00
+Recv: echo:; Advanced: B<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> X<max_x_jerk> Y<max_y_jerk> Z<max_z_jerk> E<max_e_jerk>
+Recv: echo:  M205 B20000.00 S0.00 T0.00 X10.00 Y10.00 Z0.30 E4.00
+Recv: echo:; Home offset:
+Recv: echo:  M206 X0.00 Y0.00 Z0.00
+Recv: echo:; Auto Bed Leveling:
+Recv: echo:  M420 S0 Z20.00
+Recv: echo:  G29 W I0 J0 Z-0.10125
+Recv: echo:  G29 W I1 J0 Z-0.10708
+Recv: echo:  G29 W I2 J0 Z-0.18042
+Recv: echo:  G29 W I0 J1 Z-0.07250
+Recv: echo:  G29 W I1 J1 Z-0.04792
+Recv: echo:  G29 W I2 J1 Z-0.13375
+Recv: echo:  G29 W I0 J2 Z-0.11333
+Recv: echo:  G29 W I1 J2 Z-0.10042
+Recv: echo:  G29 W I2 J2 Z-0.14708
+Recv: echo:; Material heatup parameters:
+Recv: echo:  M145 S0 H200 B60 F0
+Recv: echo:  M145 S1 H240 B85 F0
+Recv: echo:; PID settings:
+Recv: echo:  M301 P22.71 I1.94 D66.50
+Recv: echo:  M304 P106.00 I11.25 D665.73
+Recv: echo:; Z-Probe Offset (mm):
+Recv: echo:  M851 X-25.00 Y14.00 Z-2.38
+Recv: ok
+
+
+
+
+
+
+
+
+//octopi cancel script
+
+G91
+G1 E-10 F1500
+G90
+M84
+M107
+M77
+M104 S0
